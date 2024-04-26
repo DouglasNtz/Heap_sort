@@ -1,0 +1,5 @@
+Function: Heap_Sort
+Número de experimentos: 100
+Tamanho da lista de números: 5000
+Tempo total: 22.791159ms
+
