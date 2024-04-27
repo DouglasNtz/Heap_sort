@@ -123,3 +123,40 @@ pub fn heap_sort<T: PartialOrd + Copy>(elements: &mut [T]) {
 
     }
 }
+
+pub fn stable_heap_sort<T: PartialOrd + Copy>(elements: &mut [T]) {
+
+    let mut elements_no_draw = vec![];
+
+    let n = elements.len();
+
+    for (i, &element) in elements.iter().enumerate() {
+
+        elements_no_draw.push((element, n - i));
+    }
+
+    let mut last = elements_no_draw.len() - 1;
+
+    build_max_heap(& mut elements_no_draw);
+
+    loop {
+
+        elements_no_draw.swap(0, last);
+
+        last -= 1;
+
+        if last == 0 {
+            break;
+        }
+
+        max_heapify(1, &mut elements_no_draw[..=last]);
+
+    }
+
+    let mut pos = 0;
+    for element in elements {
+        *element = elements_no_draw[pos].0;
+        pos += 1;
+    }
+
+}

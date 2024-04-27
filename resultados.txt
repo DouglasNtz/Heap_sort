@@ -3,3 +3,9 @@ Número de experimentos: 100
 Tamanho da lista de números: 5000
 Tempo total: 22.791159ms
 
+Function: Stable_Heap_Sort
+Número de experimentos: 100
+Tamanho da lista de números: 5000
+Tempo total: 36.061488ms
+
+
